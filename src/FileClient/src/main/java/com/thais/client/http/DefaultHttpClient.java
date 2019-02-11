@@ -105,7 +105,7 @@ public class DefaultHttpClient implements FileClient {
             String serverUrl = getServerUrl();
             System.out.println("Calling:  " + serverUrl);
             ProgressCounter tracker = new ProgressCounter();
-            HttpPost request = createPostRequest(serverUrl, fileName, is);
+            HttpPost request = createPostRequest(serverUrl, is);
             return getResponse(client, request);
         } catch (Exception e) {
             HandleException(e);
@@ -142,9 +142,9 @@ public class DefaultHttpClient implements FileClient {
         }
     }
 
-    private HttpPost createPostRequest(String serverUrl, String fileName, InputStream is) throws IOException {
+    private HttpPost createPostRequest(String serverUrl, InputStream is) throws IOException {
         HttpPost httpPost = new HttpPost(serverUrl + "/put");
-        httpPost.addHeader(HttpUtils.getContentDispositionHeader(fileName));
+        httpPost.addHeader(HttpUtils.getContentDispositionHeader(uploadFileName));
 
         InputStreamEntity entity = new InputStreamEntity(is, -1);
         entity.setContentType(ContentType.APPLICATION_OCTET_STREAM.getMimeType());
