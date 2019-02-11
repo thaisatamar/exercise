@@ -1,0 +1,8 @@
+logging.level.root: OFF
+logging.pattern.console:
+
+#Change server details here
+server.address: localhost
+server.port: 8080
+
+

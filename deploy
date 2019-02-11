@@ -1,0 +1,24 @@
+if [ -d tmp ] ; then
+    if [ -f *.gzip ]; then
+       rm tmp/*.gzip
+    fi
+else
+    mkdir tmp
+fi
+if [ -d uploads ] ; then
+    if [ -f *.gzip ]; then
+       rm uploads/*.gzip
+    fi
+else
+    mkdir uploads
+fi
+if [ ! -d bin ]; then
+   mkdir bin
+fi
+if [ ! -d etc ]; then
+   mkdir etc
+fi
+cp src/File*/target/file*T.jar ./bin
+cp src/FileClient/src/main/resources/application.yml ./etc/client.yml
+cp src/FileServer/src/main/resources/application.yml ./etc/server.yml
+cp src/FileServer/src/main/resources/logback.xml ./etc/logback_server.xml

@@ -1,0 +1,6 @@
+
+export UP_FILE=$1
+if [ "x$1" = "x" ]; then 
+    UP_FILE=none
+fi
+java -Dlogback.configurationFile=etc/logback_client.xml -Dupload.file=${UP_FILE} -Duse.compression=$2 -jar ./bin/file-client-1.0-SNAPSHOT.jar --spring.config.location=file:etc/client.yml
