@@ -4,6 +4,8 @@ Small client / server application leveraging Jetty Web Server over Spring Boot t
 
 
 ## Running
+(All commands run from the uploader directory)
+
 To run the server on port 8080:
 
 <p><code>source file-server &</code></p>
