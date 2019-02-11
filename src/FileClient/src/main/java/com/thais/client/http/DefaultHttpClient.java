@@ -59,7 +59,7 @@ public class DefaultHttpClient implements FileClient {
 
     @PostConstruct
     void init() {
-        useCompression = paramCompress.toLowerCase().startsWith("t") || paramCompress.toLowerCase().startsWith("y");
+        useCompression = !(paramCompress.toLowerCase().startsWith("f") || paramCompress.toLowerCase().startsWith("n"));
         System.out.println("Compression is " + (useCompression ? "on." : "off."));
     }
 

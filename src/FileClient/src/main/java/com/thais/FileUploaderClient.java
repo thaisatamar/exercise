@@ -18,7 +18,7 @@ public class FileUploaderClient {
         String file = client.getUploadFileName();
         if (file.equals("none")) {
             System.out.println("Usage: file-client [full path to filename] [compress: YES | no ] \r\n " +
-                    "Example - uploaf file with no pre-upload compression: \r\n " +
+                    "Example - transfer the file with no compression prior to upload: \r\n " +
                     " source file-client [myfile.txt] NO");
             return;
         }
